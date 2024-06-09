@@ -47,7 +47,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
         btnIngreso = new javax.swing.JButton();
         btnSalida = new javax.swing.JButton();
         btnProveedores = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         pnlNavSup = new javax.swing.JPanel();
         pnlBody = new javax.swing.JPanel();
 
@@ -74,6 +74,8 @@ public class LayoutAdmin extends javax.swing.JFrame {
         lblUserType.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lblUserType.setText("Administrador");
         pnlNavLat.add(lblUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 25));
+
+        lblUserName.setText("Admin01");
         pnlNavLat.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 170, 25));
         pnlNavLat.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 280, 45));
 
@@ -132,17 +134,17 @@ public class LayoutAdmin extends javax.swing.JFrame {
         });
         pnlNavLat.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 60));
 
-        jButton1.setBackground(new java.awt.Color(102, 0, 0));
-        jButton1.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("CERRAR SESIÓN");
-        jButton1.setBorder(null);
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
+        btnCerrarSesion.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setText("CERRAR SESIÓN");
+        btnCerrarSesion.setBorder(null);
+        btnCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                btnCerrarSesionMouseClicked(evt);
             }
         });
-        pnlNavLat.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 160, 50));
+        pnlNavLat.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 160, 50));
 
         javax.swing.GroupLayout pnlNavSupLayout = new javax.swing.GroupLayout(pnlNavSup);
         pnlNavSup.setLayout(pnlNavSupLayout);
@@ -201,11 +203,11 @@ public class LayoutAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void btnCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseClicked
         this.setVisible(false);
         Login login = new Login();
         login.setVisible(true);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_btnCerrarSesionMouseClicked
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
         Inventario inventario = new Inventario();
@@ -251,12 +253,12 @@ public class LayoutAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JButton btnIngreso;
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnSalida;
     private javax.swing.JLabel iconUser;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblUserName;
