@@ -194,6 +194,7 @@ public class Usuarios extends javax.swing.JPanel {
             return;
         }
         UserModel user = new UserModel();
+        user.setIdUser(idUser);
         user.setName(name);
         user.setLastName(lastName);
         user.setUserName(userName);
