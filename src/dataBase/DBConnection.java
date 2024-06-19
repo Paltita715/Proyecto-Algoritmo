@@ -1,14 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dataBase;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class DBConnection {
     protected Connection conexion;
@@ -17,21 +11,21 @@ public class DBConnection {
     private final String DB_URL = "jdbc:mysql://localhost/"+dbName;
     private final String USER = "root";
     private final String PASS = "";
-    public void Conectar() throws ClassNotFoundException {
+    public void conectarDB() throws Exception{
         try {
-            System.out.println("Se conecto la base de datos");
             conexion = DriverManager.getConnection(DB_URL, USER, PASS);
             Class.forName(JDBC_DRIVER);
-        } catch (SQLException ex) {
-            System.out.println("No se conecto a la base de datos");
-            Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Se conecto a la base de datos");
+        } catch (ClassNotFoundException | SQLException e) {
+            throw e;
         }
     }
-    public void cerrar() throws SQLException{
+    
+    public void desconectarDB() throws SQLException{
         if (conexion != null) {
             if (!conexion.isClosed()){
                 conexion.close();
-                System.out.println("Se desconecto la base de datos");
+                System.out.println("Se desconecto de la base de datos");
             }
         }
     }

@@ -1,9 +1,8 @@
 
 package visuals;
 
-import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatGitHubDarkIJTheme;
-import implement.LoginImpl;
-import interfaces.LoginInterface;
+import DAO.implementaciones.LoginDAOImpl;
+import DAO.interfaces.LoginDAO;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Image;
@@ -23,7 +22,6 @@ public class Login extends javax.swing.JFrame {
 
     public Login() {
         isAdmin=true;
-        FlatGitHubDarkIJTheme.setup();
         initComponents();
         this.setLocationRelativeTo(null);
         pintarImagen(lblAlan, "src/multimedia/alan.jpg");
@@ -243,13 +241,15 @@ public class Login extends javax.swing.JFrame {
             String password = admin.getPassword();
             if (user.isEmpty() || password.isEmpty()) {
                 javax.swing.JOptionPane.showMessageDialog(this, "Debe ingresar un usuario y una contraseña. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                admin.clearPassword();
                 return;
             }
-            LoginInterface login = new LoginImpl();
-            LoginModel loginModelo;
+            LoginModel login = new LoginModel();
+            login.setUserName(user);
+            LoginDAO dao = new LoginDAOImpl();
             try {
-                loginModelo = login.ObtenerUser(user);
-                if (loginModelo.getPassword().equals(password)) {
+                login = (LoginModel) dao.readBy(login);
+                if(login.getPassword().equals(password)){
                     LayoutAdmin layoutAdmin = new LayoutAdmin();
                     layoutAdmin.setVisible(true);
                     this.setVisible(false);
@@ -257,7 +257,7 @@ public class Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null,"contraseña incorrecta");
                     admin.clearPassword();
                 }
-            } catch (Exception ex) {
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,"la cuenta no existe");
                 admin.clearUserName();
                 admin.clearPassword();
