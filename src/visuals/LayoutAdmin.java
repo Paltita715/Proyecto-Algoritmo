@@ -2,6 +2,8 @@
 package visuals;
 
 import java.awt.BorderLayout;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import slotsAdmin.IngresoProductos;
 import slotsAdmin.Inventario;
 import slotsAdmin.Proveedores;
@@ -233,13 +235,17 @@ public class LayoutAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalidaMouseClicked
 
     private void btnUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuariosMouseClicked
-        Usuarios usuarios = new Usuarios();
-        usuarios.setSize(820, 530);
-        usuarios.setLocation(0, 0);
-        pnlBody.removeAll();
-        pnlBody.add(usuarios, BorderLayout.CENTER);
-        pnlBody.revalidate();
-        pnlBody.repaint();
+        try {
+            Usuarios usuarios = new Usuarios();
+            usuarios.setSize(820, 530);
+            usuarios.setLocation(0, 0);
+            pnlBody.removeAll();
+            pnlBody.add(usuarios, BorderLayout.CENTER);
+            pnlBody.revalidate();
+            pnlBody.repaint();
+        } catch (Exception ex) {
+            Logger.getLogger(LayoutAdmin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnUsuariosMouseClicked
 
     private void btnProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseClicked
