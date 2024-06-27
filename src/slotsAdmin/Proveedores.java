@@ -36,14 +36,14 @@ public class Proveedores extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(337, 337, 337)
                 .addComponent(jLabel1)
-                .addContainerGap(405, Short.MAX_VALUE))
+                .addContainerGap(651, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(182, 182, 182)
                 .addComponent(jLabel1)
-                .addContainerGap(332, Short.MAX_VALUE))
+                .addContainerGap(470, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

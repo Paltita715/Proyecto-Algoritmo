@@ -24,7 +24,6 @@ public class pnlCliente extends javax.swing.JPanel {
 
         lblUsuario = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
-        btnEntrar = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -37,24 +36,10 @@ public class pnlCliente extends javax.swing.JPanel {
         txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
         txtUsuario.setText("Ingrese un nombre de usuario");
         add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 290, 30));
-
-        btnEntrar.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
-        btnEntrar.setText("ENTRAR");
-        btnEntrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnEntrarMouseClicked(evt);
-            }
-        });
-        add(btnEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 110, 40));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
-        
-    }//GEN-LAST:event_btnEntrarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables

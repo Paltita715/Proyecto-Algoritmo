@@ -24,7 +24,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="369" max="32767" attributes="0"/>
+              <EmptySpace pref="615" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -33,7 +33,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="361" max="32767" attributes="0"/>
+              <EmptySpace pref="499" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

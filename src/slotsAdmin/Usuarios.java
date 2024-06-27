@@ -9,7 +9,7 @@ import modelos.UserModel;
 
 public class Usuarios extends javax.swing.JPanel {
 
-    public Usuarios() throws Exception {
+    public Usuarios(){
         initComponents();
         tablaUsers();
     }
@@ -77,7 +77,7 @@ public class Usuarios extends javax.swing.JPanel {
             TablaUsers.getColumnModel().getColumn(4).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 440, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 610, 570));
 
         btnEliminar.setText("ELIMINAR");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +85,7 @@ public class Usuarios extends javax.swing.JPanel {
                 btnEliminarActionPerformed(evt);
             }
         });
-        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 457, 100, 50));
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 550, 100, 50));
 
         btnAgregar.setText("AGREGAR");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +93,7 @@ public class Usuarios extends javax.swing.JPanel {
                 btnAgregarActionPerformed(evt);
             }
         });
-        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 457, 100, 50));
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, 100, 50));
 
         btnEditar.setText("EDITAR");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,37 +101,37 @@ public class Usuarios extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 457, 100, 50));
+        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 550, 100, 50));
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ADMINISTRAR USUARIOS");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 290, -1));
-        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 320, 40));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 130, 320, 40));
 
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("NOMBRE:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, -1));
-        add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 320, 40));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 100, -1, -1));
+        add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 220, 320, 40));
 
         jLabel6.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("APELLIDO:");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, -1));
-        add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 320, 40));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 190, -1, -1));
+        add(txtNombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 310, 320, 40));
 
         jLabel7.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("NOMBRE DE USUARIO:");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 260, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 280, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("CONTRASEÑA:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 350, -1, -1));
-        add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 380, 320, 40));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 370, -1, -1));
+        add(txtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 400, 320, 40));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 290, -1));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -220,7 +220,7 @@ public class Usuarios extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_TablaUsersMousePressed
 
-    private void tablaUsers() throws Exception{
+    private void tablaUsers(){
         try {
             UserDAO dao = new UserDAOImpl();
             DefaultTableModel model = (DefaultTableModel) TablaUsers.getModel();
@@ -233,7 +233,7 @@ public class Usuarios extends javax.swing.JPanel {
                 u.getPassword()
             })));
         } catch (Exception e) {
-            throw e;
+            System.err.print(e);
         }
     }
     

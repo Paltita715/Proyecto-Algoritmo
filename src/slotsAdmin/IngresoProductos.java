@@ -34,7 +34,7 @@ public class IngresoProductos extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(322, Short.MAX_VALUE)
+                .addContainerGap(568, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(362, 362, 362))
         );
@@ -43,7 +43,7 @@ public class IngresoProductos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(159, 159, 159)
                 .addComponent(jLabel1)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(493, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

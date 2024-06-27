@@ -8,7 +8,7 @@ import visuals.LayoutCliente;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello Alam!!!");
+        System.out.println("Hello Alan!!!");
         Login login = new Login();
         LayoutAdmin layoutAdmin = new LayoutAdmin();
         LayoutCliente layoutCliente = new LayoutCliente();

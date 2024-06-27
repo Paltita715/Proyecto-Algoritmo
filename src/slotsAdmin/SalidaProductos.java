@@ -36,14 +36,14 @@ public class SalidaProductos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(324, 324, 324)
                 .addComponent(jLabel1)
-                .addContainerGap(369, Short.MAX_VALUE))
+                .addContainerGap(615, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(153, 153, 153)
                 .addComponent(jLabel1)
-                .addContainerGap(361, Short.MAX_VALUE))
+                .addContainerGap(499, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

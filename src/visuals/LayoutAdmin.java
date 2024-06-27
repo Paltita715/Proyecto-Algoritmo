@@ -1,9 +1,5 @@
-
 package visuals;
 
-import java.awt.BorderLayout;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import slotsAdmin.IngresoProductos;
 import slotsAdmin.Inventario;
 import slotsAdmin.Proveedores;
@@ -16,12 +12,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(bg);
         Inventario inventario = new Inventario();
-        inventario.setSize(820, 530);
-        inventario.setLocation(0, 0);
-        pnlBody.removeAll();
-        pnlBody.add(inventario, BorderLayout.CENTER);
-        pnlBody.revalidate();
-        pnlBody.repaint();
+        PanelSwitcher.switchPanel(pnlBody, inventario);
     }
 
     @SuppressWarnings("unchecked")
@@ -86,7 +77,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnInventarioMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 300, 60));
+        pnlNavLat.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 300, 80));
 
         btnIngreso.setBackground(new java.awt.Color(51, 0, 0));
         btnIngreso.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -99,7 +90,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnIngresoMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 300, 60));
+        pnlNavLat.add(btnIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 300, 80));
 
         btnSalida.setBackground(new java.awt.Color(51, 0, 0));
         btnSalida.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -112,7 +103,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnSalidaMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 300, 60));
+        pnlNavLat.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 300, 80));
 
         btnUsuarios.setBackground(new java.awt.Color(51, 0, 0));
         btnUsuarios.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -125,7 +116,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnUsuariosMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 300, 60));
+        pnlNavLat.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 300, 80));
 
         btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
         btnCerrarSesion.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -137,7 +128,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnCerrarSesionMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, 160, 50));
+        pnlNavLat.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 160, 50));
 
         btnProveedores.setBackground(new java.awt.Color(51, 0, 0));
         btnProveedores.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -150,9 +141,9 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnProveedoresMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 300, 60));
+        pnlNavLat.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 300, 80));
 
-        bg.add(pnlNavLat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 630));
+        bg.add(pnlNavLat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 768));
 
         pnlNavSup.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -160,14 +151,14 @@ public class LayoutAdmin extends javax.swing.JFrame {
         pnlNavSup.setLayout(pnlNavSupLayout);
         pnlNavSupLayout.setHorizontalGroup(
             pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
+            .addGap(0, 1066, Short.MAX_VALUE)
         );
         pnlNavSupLayout.setVerticalGroup(
             pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
-        bg.add(pnlNavSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, -1, -1));
+        bg.add(pnlNavSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 1066, -1));
 
         pnlBody.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -175,14 +166,14 @@ public class LayoutAdmin extends javax.swing.JFrame {
         pnlBody.setLayout(pnlBodyLayout);
         pnlBodyLayout.setHorizontalGroup(
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 820, Short.MAX_VALUE)
+            .addGap(0, 1066, Short.MAX_VALUE)
         );
         pnlBodyLayout.setVerticalGroup(
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        bg.add(pnlBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 820, 530));
+        bg.add(pnlBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 1066, 668));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,58 +197,29 @@ public class LayoutAdmin extends javax.swing.JFrame {
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
         Inventario inventario = new Inventario();
-        inventario.setSize(820, 530);
-        inventario.setLocation(0, 0);
-        pnlBody.removeAll();
-        pnlBody.add(inventario, BorderLayout.CENTER);
-        pnlBody.revalidate();
-        pnlBody.repaint();
+        PanelSwitcher.switchPanel(pnlBody, inventario);
     }//GEN-LAST:event_btnInventarioMouseClicked
 
     private void btnIngresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresoMouseClicked
         IngresoProductos ingreso = new IngresoProductos();
-        ingreso.setSize(820, 530);
-        ingreso.setLocation(0, 0);
-        pnlBody.removeAll();
-        pnlBody.add(ingreso, BorderLayout.CENTER);
-        pnlBody.revalidate();
-        pnlBody.repaint();
+        PanelSwitcher.switchPanel(pnlBody, ingreso);
     }//GEN-LAST:event_btnIngresoMouseClicked
 
     private void btnSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalidaMouseClicked
         SalidaProductos salida = new SalidaProductos();
-        salida.setSize(820, 530);
-        salida.setLocation(0, 0);
-        pnlBody.removeAll();
-        pnlBody.add(salida, BorderLayout.CENTER);
-        pnlBody.revalidate();
-        pnlBody.repaint();
+        PanelSwitcher.switchPanel(pnlBody, salida);
     }//GEN-LAST:event_btnSalidaMouseClicked
 
     private void btnUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuariosMouseClicked
-        try {
-            Usuarios usuarios = new Usuarios();
-            usuarios.setSize(820, 530);
-            usuarios.setLocation(0, 0);
-            pnlBody.removeAll();
-            pnlBody.add(usuarios, BorderLayout.CENTER);
-            pnlBody.revalidate();
-            pnlBody.repaint();
-        } catch (Exception ex) {
-            Logger.getLogger(LayoutAdmin.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Usuarios usuarios = new Usuarios();
+        PanelSwitcher.switchPanel(pnlBody, usuarios);
     }//GEN-LAST:event_btnUsuariosMouseClicked
 
     private void btnProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseClicked
         Proveedores proveedores = new Proveedores();
-        proveedores.setSize(820, 530);
-        proveedores.setLocation(0, 0);
-        pnlBody.removeAll();
-        pnlBody.add(proveedores, BorderLayout.CENTER);
-        pnlBody.revalidate();
-        pnlBody.repaint();
+        PanelSwitcher.switchPanel(pnlBody, proveedores);
     }//GEN-LAST:event_btnProveedoresMouseClicked
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btnCerrarSesion;
