@@ -1,5 +1,7 @@
 package visuals;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 import slotsAdmin.IngresoProductos;
 import slotsAdmin.Inventario;
 import slotsAdmin.Proveedores;
@@ -10,9 +12,9 @@ public class LayoutAdmin extends javax.swing.JFrame {
 
     public LayoutAdmin() {
         initComponents();
-        this.setLocationRelativeTo(bg);
+        this.setLocationRelativeTo(null);
         Inventario inventario = new Inventario();
-        PanelSwitcher.switchPanel(pnlBody, inventario);
+        switchPanel(pnlBody, inventario);
     }
 
     @SuppressWarnings("unchecked")
@@ -197,28 +199,37 @@ public class LayoutAdmin extends javax.swing.JFrame {
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
         Inventario inventario = new Inventario();
-        PanelSwitcher.switchPanel(pnlBody, inventario);
+        switchPanel(pnlBody, inventario);
     }//GEN-LAST:event_btnInventarioMouseClicked
 
     private void btnIngresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresoMouseClicked
         IngresoProductos ingreso = new IngresoProductos();
-        PanelSwitcher.switchPanel(pnlBody, ingreso);
+        switchPanel(pnlBody, ingreso);
     }//GEN-LAST:event_btnIngresoMouseClicked
 
     private void btnSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalidaMouseClicked
         SalidaProductos salida = new SalidaProductos();
-        PanelSwitcher.switchPanel(pnlBody, salida);
+        switchPanel(pnlBody, salida);
     }//GEN-LAST:event_btnSalidaMouseClicked
 
     private void btnUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuariosMouseClicked
         Usuarios usuarios = new Usuarios();
-        PanelSwitcher.switchPanel(pnlBody, usuarios);
+        switchPanel(pnlBody, usuarios);
     }//GEN-LAST:event_btnUsuariosMouseClicked
 
     private void btnProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseClicked
         Proveedores proveedores = new Proveedores();
-        PanelSwitcher.switchPanel(pnlBody, proveedores);
+        switchPanel(pnlBody, proveedores);
     }//GEN-LAST:event_btnProveedoresMouseClicked
+    
+    private void switchPanel(JPanel container, JPanel panel) {
+        panel.setSize(1066, 668);
+        panel.setLocation(0, 0);
+        container.removeAll();
+        container.add(panel, BorderLayout.CENTER);
+        container.revalidate();
+        container.repaint();
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;

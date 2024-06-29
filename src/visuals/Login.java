@@ -1,4 +1,3 @@
-
 package visuals;
 
 import DAO.implementaciones.LoginDAOImpl;
@@ -80,7 +79,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bg.add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 300, -1));
+        bg.add(pnlLateral, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, -1, -1));
 
         pnlSup.setBackground(new java.awt.Color(255, 255, 255));
         pnlSup.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -144,7 +143,7 @@ public class Login extends javax.swing.JFrame {
             .addComponent(pnlExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        bg.add(pnlSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 35));
+        bg.add(pnlSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         lblTitulo.setFont(new java.awt.Font("Roboto Black", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
@@ -184,7 +183,7 @@ public class Login extends javax.swing.JFrame {
             .addGap(0, 230, Short.MAX_VALUE)
         );
 
-        bg.add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 400, 230));
+        bg.add(pnlContent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
         btnAdmin.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
         btnAdmin.setText("ADMIN");
