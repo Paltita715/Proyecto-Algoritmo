@@ -4,6 +4,12 @@
  */
 package slotsAdmin;
 
+import DAO.implementaciones.ProveedorDAOlmpl;
+import DAO.interfaces.ProveedorDAO;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import modelos.ProveedorModel;
+
 public class Proveedores extends javax.swing.JPanel {
 
     /**
@@ -11,6 +17,7 @@ public class Proveedores extends javax.swing.JPanel {
      */
     public Proveedores() {
         initComponents();
+        tablaProveedor();
     }
 
     /**
@@ -22,33 +29,292 @@ public class Proveedores extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        BtnEliminar = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        txtContact = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtName = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtAddress = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaProveedor = new javax.swing.JTable();
+        btnAgregar = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        BtnEliminar1 = new javax.swing.JButton();
+
+        BtnEliminar.setText("ELIMINAR");
+        BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarActionPerformed(evt);
+            }
+        });
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("PROVEEDORES");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel2.setText("Nombre");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel3.setText("Direccion");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel4.setText("Contacto");
+
+        tablaProveedor.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "ID", "Nombre", "Direccion", "Contacto"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tablaProveedor);
+
+        btnAgregar.setText("AGREGAR");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+
+        btnEditar.setText("EDITAR");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("REGISTRO DE PROVEEDORES");
+
+        BtnEliminar1.setText("ELIMINAR");
+        BtnEliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminar1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(337, 337, 337)
-                .addComponent(jLabel1)
-                .addContainerGap(651, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(26, 26, 26)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(BtnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(20, 20, 20))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(470, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel3)
+                        .addGap(28, 28, 28)
+                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(122, 122, 122)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BtnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(70, 70, 70))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        String name = txtName.getText();
+        String direccion = txtAddress.getText();
+        String contacts = txtContact.getText();
+
+        if(name.isEmpty() || direccion.isEmpty() || contacts.isEmpty()){
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe ingresar un nombre, dirección y contactos.", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        ProveedorModel proveedor = new ProveedorModel();
+        proveedor.setName(name);
+        proveedor.setContact(contacts);
+        proveedor.setAddress(direccion);
+
+        ProveedorDAO dao = new ProveedorDAOlmpl();
+        try {
+            dao.create(proveedor);
+            JOptionPane.showMessageDialog(null, "Proveedor creado correctamente");
+            tablaProveedor();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ah ocurrido un error, el proveedor no se a creado");
+            System.err.print(e);
+        }
+
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        int selectedRow = tablaProveedor.getSelectedRow();
+
+        if (selectedRow == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar una fila de la tabla de proveedores.", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        int idProveedor = (int) tablaProveedor.getValueAt(selectedRow, 0);
+
+        String nombre = txtName.getText();
+        String direccion = txtAddress.getText();
+        String contactos = txtContact.getText();
+
+        if (nombre.isEmpty() || direccion.isEmpty() || contactos.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe ingresar un nombre, dirección y contactos.", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+
+        ProveedorModel proveedor = new ProveedorModel();
+        proveedor.setIdSuppier(idProveedor);
+        proveedor.setName(nombre);
+        proveedor.setAddress(direccion);
+        proveedor.setContact(contactos);
+
+        ProveedorDAO dao = new ProveedorDAOlmpl();
+
+        try {
+
+            dao.update(proveedor);
+
+            JOptionPane.showMessageDialog(null, "Proveedor actualizado correctamente");
+
+            tablaProveedor();
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al actualizar el proveedor: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void BtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarActionPerformed
+        int selectedRow = tablaProveedor.getSelectedRow();
+        if (selectedRow == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar una fila de la tabla de proveedores.", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        int idProveedor = (int) tablaProveedor.getValueAt(selectedRow, 0);
+        ProveedorModel proveedor = new ProveedorModel();
+        proveedor.setIdSuppier(idProveedor);
+        ProveedorDAO dao = new ProveedorDAOlmpl();
+        try {
+
+            dao.delete(proveedor);
+            JOptionPane.showMessageDialog(null, "Proveedor eliminado correctamente");
+            tablaProveedor();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al eliminar el proveedor: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_BtnEliminarActionPerformed
+
+    private void BtnEliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminar1ActionPerformed
+        int selectedRow = tablaProveedor.getSelectedRow();
+        if (selectedRow == -1) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar una fila de la tabla de proveedores.", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        int idProveedor = (int) tablaProveedor.getValueAt(selectedRow, 0);
+        ProveedorModel proveedor = new ProveedorModel();
+        proveedor.setIdSuppier(idProveedor);
+        ProveedorDAO dao = new ProveedorDAOlmpl();
+        try {
+
+            dao.delete(proveedor);
+            JOptionPane.showMessageDialog(null, "Proveedor eliminado correctamente");
+            tablaProveedor();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al eliminar el proveedor: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_BtnEliminar1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnEliminar;
+    private javax.swing.JButton BtnEliminar1;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tablaProveedor;
+    private javax.swing.JTextField txtAddress;
+    private javax.swing.JTextField txtContact;
+    private javax.swing.JTextField txtName;
     // End of variables declaration//GEN-END:variables
+
+   private void tablaProveedor() {
+      try {
+            ProveedorDAO dao = new ProveedorDAOlmpl();
+            DefaultTableModel model = (DefaultTableModel) tablaProveedor.getModel();
+            model.setRowCount(0);
+            dao.readAll().forEach((u -> model.addRow(new Object[]{
+                u.getIdSuppier(),
+                u.getName(),
+                u.getAddress(),
+                u.getContact()
+                   
+            })));
+        } catch (Exception e) {
+            System.err.print(e);
+        }
+        
+               
+        
+    }
 }
