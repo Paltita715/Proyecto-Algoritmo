@@ -42,6 +42,7 @@ public class Proveedores extends javax.swing.JPanel {
         btnEditar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         BtnEliminar1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         BtnEliminar.setText("ELIMINAR");
         BtnEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +97,7 @@ public class Proveedores extends javax.swing.JPanel {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("REGISTRO DE PROVEEDORES");
 
         BtnEliminar1.setText("ELIMINAR");
@@ -104,6 +106,8 @@ public class Proveedores extends javax.swing.JPanel {
                 BtnEliminar1ActionPerformed(evt);
             }
         });
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -117,56 +121,58 @@ public class Proveedores extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 662, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addGap(29, 29, 29)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
+                                .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(BtnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(20, 20, 20))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(32, 32, 32)
-                                        .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, 87, Short.MAX_VALUE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(BtnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(20, 20, 20))))))
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel3)
-                        .addGap(28, 28, 28)
-                        .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(122, 122, 122)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(BtnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(70, 70, 70))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 511, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtName, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtContact, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BtnEliminar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(77, 77, 77))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -292,6 +298,7 @@ public class Proveedores extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tablaProveedor;
     private javax.swing.JTextField txtAddress;
     private javax.swing.JTextField txtContact;
