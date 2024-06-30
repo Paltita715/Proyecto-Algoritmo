@@ -45,16 +45,21 @@ public class Inventario extends javax.swing.JPanel {
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 250, 20));
 
-        jButton2.setText("jButton2");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-ram-de-computadora-100.png"))); // NOI18N
         add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 75, 100, 100));
 
-        jButton3.setText("jButton2");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Procesador.png"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 75, 100, 100));
 
-        jButton4.setText("jButton2");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-tarjeta-de-video-100.png"))); // NOI18N
         add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 75, 100, 100));
 
-        jButton6.setText("jButton2");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-placa-base-100.png"))); // NOI18N
         add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 75, 100, 100));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -65,7 +70,7 @@ public class Inventario extends javax.swing.JPanel {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Marca", "Frecuencia", "Stock"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -101,6 +106,10 @@ public class Inventario extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 60, 40));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
