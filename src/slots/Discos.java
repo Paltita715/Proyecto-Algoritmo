@@ -37,11 +37,11 @@ public class Discos extends javax.swing.JPanel {
         btnEliminar = new javax.swing.JButton();
         btnNuevo = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
+        btnEditarStock = new javax.swing.JButton();
+        txtCantidad = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtId = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -57,6 +57,11 @@ public class Discos extends javax.swing.JPanel {
                 "id", "Proveedor", "Nombre", "Tipo", "Capacidad", "Interfaz", "Lectura", "Escritura", "Cantidad"
             }
         ));
+        TablaDiscos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                TablaDiscosMousePressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaDiscos);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 760, -1));
@@ -93,9 +98,14 @@ public class Discos extends javax.swing.JPanel {
         });
         add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, -1, -1));
 
-        jButton2.setText("AGREGAR STOCK");
-        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 320, -1, -1));
-        add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, -1, -1));
+        btnEditarStock.setText("EDITAR STOCK");
+        btnEditarStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarStockActionPerformed(evt);
+            }
+        });
+        add(btnEditarStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, -1, -1));
+        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 270, 110, 50));
 
         jLabel1.setText("CANTIDAD");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, 70, 30));
@@ -103,8 +113,9 @@ public class Discos extends javax.swing.JPanel {
         jLabel2.setText("ID:");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, 30, -1));
 
-        jTextField2.setEditable(false);
-        add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 230, -1, -1));
+        txtId.setEditable(false);
+        txtId.setText("ID");
+        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 132, 80, 120));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -156,6 +167,42 @@ public class Discos extends javax.swing.JPanel {
         LayoutAdmin.getInstance().switchPanel(editDisco);
     }//GEN-LAST:event_btnEditarActionPerformed
 
+    private void TablaDiscosMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaDiscosMousePressed
+        int rowDisk = TablaDiscos.getSelectedRow();
+        if (rowDisk != -1) {
+            txtId.setText((String) TablaDiscos.getValueAt(rowDisk, 0));
+        }
+    }//GEN-LAST:event_TablaDiscosMousePressed
+
+    private void btnEditarStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarStockActionPerformed
+        int rowUser = TablaDiscos.getSelectedRow();
+                if(rowUser == -1){
+            javax.swing.JOptionPane.showMessageDialog(this, "Debe seleccionar una fila de la tabla de usuarios. \n", "AVISO", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        DiscoModel disco = new DiscoModel();
+        disco.setDiskId((String) TablaDiscos.getValueAt(rowUser, 0));
+        disco.setSupplierId((Integer) TablaDiscos.getValueAt(rowUser, 1));
+        disco.setName((String) TablaDiscos.getValueAt(rowUser, 2));
+        disco.setType((String) TablaDiscos.getValueAt(rowUser, 3));
+        disco.setCapacity((Integer) TablaDiscos.getValueAt(rowUser, 4));
+        disco.setInterface((String) TablaDiscos.getValueAt(rowUser, 5));
+        disco.setReadSpeed((Integer) TablaDiscos.getValueAt(rowUser, 6));
+        disco.setWriteSpeed((Integer) TablaDiscos.getValueAt(rowUser, 7));
+        disco.setQuantity((int) txtCantidad.getValue());
+        DiscoDAO dao = new DiscoDAOImpl();
+        try {
+            dao.update(disco);
+            JOptionPane.showMessageDialog(null, "Disco actualizado correctamente");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ah ocurrido un error");
+            System.err.println(e);
+        } finally{
+            Discos discos = new Discos();
+            LayoutAdmin.getInstance().switchPanel(discos);
+        }
+    }//GEN-LAST:event_btnEditarStockActionPerformed
+
     private void tablaDiscos(){
         try {
             DiscoDAO dao = new DiscoDAOImpl();
@@ -180,14 +227,14 @@ public class Discos extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TablaDiscos;
     private javax.swing.JButton btnEditar;
+    private javax.swing.JButton btnEditarStock;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnNuevo;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JSpinner txtCantidad;
+    private javax.swing.JTextField txtId;
     // End of variables declaration//GEN-END:variables
 }
