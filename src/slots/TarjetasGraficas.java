@@ -2,14 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package slotsGenerales;
+package slots;
 
-public class Productos extends javax.swing.JPanel {
+/**
+ *
+ * @author U22244028
+ */
+public class TarjetasGraficas extends javax.swing.JPanel {
 
     /**
-     * Creates new form Productos
+     * Creates new form TarjetasGraficas
      */
-    public Productos() {
+    public TarjetasGraficas() {
         initComponents();
     }
 

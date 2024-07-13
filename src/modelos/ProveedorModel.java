@@ -1,50 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modelos;
 
-/**
- *
- * @author sebas
- */
 public class ProveedorModel {
-    private int idSuppier; 
-    private String Name; 
-    private String Address; 
-    private String Contact;
+    private int supplierId; 
+    private String name; 
+    private String contact; 
+    private String address;
 
-    public int getIdSuppier() {
-        return idSuppier;
+    public int getSupplierId() {
+        return supplierId;
     }
 
-    public void setIdSuppier(int idSuppier) {
-        this.idSuppier = idSuppier;
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String Name) {
-        this.Name = Name;
-    }
-
-    public String getAddress() {
-        return Address;
-    }
-
-    public void setAddress(String Address) {
-        this.Address = Address;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getContact() {
-        return Contact;
+        return contact;
     }
 
-    public void setContact(String Contact) {
-        this.Contact = Contact;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
-    
-    
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 }

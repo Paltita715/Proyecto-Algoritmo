@@ -2,19 +2,25 @@ package visuals;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
-import slotsAdmin.IngresoProductos;
-import slotsAdmin.Inventario;
-import slotsAdmin.Proveedores;
-import slotsAdmin.SalidaProductos;
-import slotsAdmin.Usuarios;
+import slots.AdministarProductos;
+import slots.Inventario;
+import slots.Proveedores;
+import slots.Usuarios;
 
 public class LayoutAdmin extends javax.swing.JFrame {
+    
+    private static LayoutAdmin instance;
 
     public LayoutAdmin() {
         initComponents();
         this.setLocationRelativeTo(null);
+        instance = this;
         Inventario inventario = new Inventario();
-        switchPanel(pnlBody, inventario);
+        switchPanel(inventario);
+    }
+    
+    public static LayoutAdmin getInstance() {
+        return instance;
     }
 
     @SuppressWarnings("unchecked")
@@ -29,8 +35,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         iconUser = new javax.swing.JLabel();
         btnInventario = new javax.swing.JButton();
-        btnIngreso = new javax.swing.JButton();
-        btnSalida = new javax.swing.JButton();
+        btnAdministrar = new javax.swing.JButton();
         btnUsuarios = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         btnProveedores = new javax.swing.JButton();
@@ -81,31 +86,18 @@ public class LayoutAdmin extends javax.swing.JFrame {
         });
         pnlNavLat.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 300, 80));
 
-        btnIngreso.setBackground(new java.awt.Color(51, 0, 0));
-        btnIngreso.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnIngreso.setForeground(new java.awt.Color(255, 255, 255));
-        btnIngreso.setText("INGRESO DE PRODUCTOS");
-        btnIngreso.setBorder(null);
-        btnIngreso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnIngreso.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnAdministrar.setBackground(new java.awt.Color(51, 0, 0));
+        btnAdministrar.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
+        btnAdministrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdministrar.setText("ADMINISTRAR PRODUCTOS");
+        btnAdministrar.setBorder(null);
+        btnAdministrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAdministrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnIngresoMouseClicked(evt);
+                btnAdministrarMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 300, 80));
-
-        btnSalida.setBackground(new java.awt.Color(51, 0, 0));
-        btnSalida.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        btnSalida.setForeground(new java.awt.Color(255, 255, 255));
-        btnSalida.setText("SALIDA DE PRODUCTOS");
-        btnSalida.setBorder(null);
-        btnSalida.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnSalida.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnSalidaMouseClicked(evt);
-            }
-        });
-        pnlNavLat.add(btnSalida, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 300, 80));
+        pnlNavLat.add(btnAdministrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 300, 80));
 
         btnUsuarios.setBackground(new java.awt.Color(51, 0, 0));
         btnUsuarios.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -199,45 +191,39 @@ public class LayoutAdmin extends javax.swing.JFrame {
 
     private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
         Inventario inventario = new Inventario();
-        switchPanel(pnlBody, inventario);
+        switchPanel(inventario);
     }//GEN-LAST:event_btnInventarioMouseClicked
 
-    private void btnIngresoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresoMouseClicked
-        IngresoProductos ingreso = new IngresoProductos();
-        switchPanel(pnlBody, ingreso);
-    }//GEN-LAST:event_btnIngresoMouseClicked
-
-    private void btnSalidaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalidaMouseClicked
-        SalidaProductos salida = new SalidaProductos();
-        switchPanel(pnlBody, salida);
-    }//GEN-LAST:event_btnSalidaMouseClicked
+    private void btnAdministrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdministrarMouseClicked
+        AdministarProductos administrar = new AdministarProductos();
+        switchPanel(administrar);
+    }//GEN-LAST:event_btnAdministrarMouseClicked
 
     private void btnUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUsuariosMouseClicked
         Usuarios usuarios = new Usuarios();
-        switchPanel(pnlBody, usuarios);
+        switchPanel(usuarios);
     }//GEN-LAST:event_btnUsuariosMouseClicked
 
     private void btnProveedoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseClicked
         Proveedores proveedores = new Proveedores();
-        switchPanel(pnlBody, proveedores);
+        switchPanel(proveedores);
     }//GEN-LAST:event_btnProveedoresMouseClicked
     
-    private void switchPanel(JPanel container, JPanel panel) {
+    public final void switchPanel(JPanel panel) {
         panel.setSize(1066, 668);
         panel.setLocation(0, 0);
-        container.removeAll();
-        container.add(panel, BorderLayout.CENTER);
-        container.revalidate();
-        container.repaint();
+        pnlBody.removeAll();
+        pnlBody.add(panel, BorderLayout.CENTER);
+        pnlBody.revalidate();
+        pnlBody.repaint();
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
+    private javax.swing.JButton btnAdministrar;
     private javax.swing.JButton btnCerrarSesion;
-    private javax.swing.JButton btnIngreso;
     private javax.swing.JButton btnInventario;
     private javax.swing.JButton btnProveedores;
-    private javax.swing.JButton btnSalida;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel iconUser;
     private javax.swing.JPanel jPanel2;

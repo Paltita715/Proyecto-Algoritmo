@@ -1,5 +1,4 @@
-
-package slotsAdmin;
+package slots;
 
 import DAO.implementaciones.UserDAOImpl;
 import DAO.interfaces.UserDAO;
