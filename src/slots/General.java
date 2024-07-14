@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import javax.swing.RowFilter;
 import modelos.ComponenteModel;
 import javax.swing.table.TableRowSorter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class General extends javax.swing.JPanel {
     
@@ -133,7 +135,7 @@ public class General extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(TableRecomendaciones);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, 560, 350));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 290, 560, 350));
 
         add(comBoxBuscarPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 150, 50));
 
@@ -241,19 +243,23 @@ public class General extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_TableComponentesMousePressed
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
-        //Capturar por que se esta buscando segun el comboBox
-        
-        //obtener el texto de txtBuscar
-        
-        //y buscar el texto en la tabla segun la columna del comboBox y ocualtar todas las flas que no coincidad
-        String text = txtBuscar.getText().trim();
-        int columnIndex = comBoxBuscarPor.getSelectedIndex();
-        if (columnIndex != -1 && !text.isEmpty()) {
-            rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, columnIndex));
-        } else {
-            rowSorter.setRowFilter(null); // Si no hay texto, mostrar todas las filas
+    private void filterTable() {
+            // Obtener el texto de txtBuscar
+            String text = txtBuscar.getText().trim();
+
+            // Obtener el índice de la columna seleccionada en comBoxBuscarPor
+            int columnIndex = comBoxBuscarPor.getSelectedIndex();
+
+            // Crear un filtro basado en el texto y la columna seleccionada
+            if (columnIndex != -1 && !text.isEmpty()) {
+                rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, columnIndex));
+            } else {
+                rowSorter.setRowFilter(null); // Si no hay texto, mostrar todas las filas
+            }
         }
+    
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        filterTable();
     }//GEN-LAST:event_txtBuscarActionPerformed
     
     private void cargarRecomendaciones(ArrayList<ComponenteModel> recomendacionesList) {
@@ -383,6 +389,23 @@ public class General extends javax.swing.JPanel {
         for (int i = 0; i < tableModel.getColumnCount(); i++) {
             comBoxBuscarPor.addItem(tableModel.getColumnName(i));
         }
+        
+        txtBuscar.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                filterTable();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                filterTable();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                filterTable();
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
