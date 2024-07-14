@@ -15,18 +15,23 @@ import modelos.PlacaMadreModel;
 import modelos.TarjetaGraficaModel;
 import algoritmos.Recomendaciones;
 import java.util.ArrayList;
+import javax.swing.RowFilter;
 import modelos.ComponenteModel;
+import javax.swing.table.TableRowSorter;
 
 public class General extends javax.swing.JPanel {
     
     String typeComponent;
     private Recomendaciones recomendaciones;
+    private DefaultTableModel tableModel;
+    private TableRowSorter<DefaultTableModel> rowSorter;
 
     public General() {
         initComponents();
         recomendaciones = new Recomendaciones();
         cargarDatosDiscos();
         typeComponent="Disk";
+        setupTableAndSearch();
     }
 
     @SuppressWarnings("unchecked")
@@ -130,10 +135,14 @@ public class General extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, 560, 350));
 
-        add(comBoxBuscarPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 150, 50));
+        add(comBoxBuscarPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 150, 50));
 
-        txtBuscar.setText("Que desea buscar ?...");
-        add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 500, 50));
+        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtBuscarActionPerformed(evt);
+            }
+        });
+        add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 500, 50));
 
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -231,6 +240,21 @@ public class General extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_TableComponentesMousePressed
+
+    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+        //Capturar por que se esta buscando segun el comboBox
+        
+        //obtener el texto de txtBuscar
+        
+        //y buscar el texto en la tabla segun la columna del comboBox y ocualtar todas las flas que no coincidad
+        String text = txtBuscar.getText().trim();
+        int columnIndex = comBoxBuscarPor.getSelectedIndex();
+        if (columnIndex != -1 && !text.isEmpty()) {
+            rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text, columnIndex));
+        } else {
+            rowSorter.setRowFilter(null); // Si no hay texto, mostrar todas las filas
+        }
+    }//GEN-LAST:event_txtBuscarActionPerformed
     
     private void cargarRecomendaciones(ArrayList<ComponenteModel> recomendacionesList) {
         DefaultTableModel model = (DefaultTableModel) TableRecomendaciones.getModel();
@@ -251,7 +275,8 @@ public class General extends javax.swing.JPanel {
             DiscoDAO dao = new DiscoDAOImpl();
             DefaultTableModel model = (DefaultTableModel) TableComponentes.getModel();
             model.setRowCount(0); // Limpiar tabla
-            model.setColumnIdentifiers(new Object[]{"Name", "Type", "Capacity", "Interface", "Read Speed", "Write Speed", "Quantity"});
+            String[] columnNames = {"Name", "Type", "Capacity", "Interface", "Read Speed", "Write Speed", "Quantity"};
+            model.setColumnIdentifiers(columnNames);
             dao.readAll().forEach((u -> model.addRow(new Object[]{
                 u.getName(),
                 u.getType(),
@@ -261,6 +286,10 @@ public class General extends javax.swing.JPanel {
                 u.getWriteSpeed(),
                 u.getQuantity(),
             })));
+            comBoxBuscarPor.removeAllItems();
+            for (String columnName : columnNames) {
+                comBoxBuscarPor.addItem(columnName);
+            }
         } catch (Exception e) {
             System.err.print(e);
         }
@@ -271,7 +300,8 @@ public class General extends javax.swing.JPanel {
             RamDAO dao = new RamDAOImpl();
             DefaultTableModel model = (DefaultTableModel) TableComponentes.getModel();
             model.setRowCount(0); // Limpiar tabla
-            model.setColumnIdentifiers(new Object[]{"Name", "Type", "Capacity", "Speed", "Latency", "Voltage", "Quantity"});
+            String[] columnNames = {"Name", "Type", "Capacity", "Speed", "Latency", "Voltage", "Quantity"};
+            model.setColumnIdentifiers(columnNames);
             dao.readAll().forEach((u -> model.addRow(new Object[]{
                 u.getName(),
                 u.getType(),
@@ -281,6 +311,10 @@ public class General extends javax.swing.JPanel {
                 u.getVoltage(),
                 u.getQuantity(),
             })));
+            comBoxBuscarPor.removeAllItems();
+            for (String columnName : columnNames) {
+                comBoxBuscarPor.addItem(columnName);
+            }
         } catch (Exception e) {
             System.err.print(e);
         }
@@ -291,7 +325,8 @@ public class General extends javax.swing.JPanel {
             TarjetaGraficaDAO dao = new TarjetaGraficaDAOImpl();
             DefaultTableModel model = (DefaultTableModel) TableComponentes.getModel();
             model.setRowCount(0); // Limpiar tabla
-            model.setColumnIdentifiers(new Object[]{"Name", "PCIe", "Memory", "Type Memory", "Bandwidth", "Quantity"});
+            String[] columnNames = {"Name", "PCIe", "Memory", "Type Memory", "Bandwidth", "Quantity"};
+            model.setColumnIdentifiers(columnNames);
             dao.readAll().forEach((u -> model.addRow(new Object[]{
                 u.getName(),
                 u.getPCIe(),
@@ -300,6 +335,10 @@ public class General extends javax.swing.JPanel {
                 u.getBandwidth(),
                 u.getQuantity(),
             })));
+            comBoxBuscarPor.removeAllItems();
+            for (String columnName : columnNames) {
+                comBoxBuscarPor.addItem(columnName);
+            }
         } catch (Exception e) {
             System.err.print(e);
         }
@@ -310,7 +349,8 @@ public class General extends javax.swing.JPanel {
             PlacaMadreDAO dao = new PlacaMadreDAOImpl();
             DefaultTableModel model = (DefaultTableModel) TableComponentes.getModel();
             model.setRowCount(0); // Limpiar tabla
-            model.setColumnIdentifiers(new Object[]{"Name", "socket", "ramType", "maxRam", "PCIe", "storagePorts", "Quantity", "compatibleWithSATA", "compatibleWithNVMe"});
+            String[] columnNames = {"Name", "socket", "ramType", "maxRam", "PCIe", "storagePorts", "Quantity", "compatibleWithSATA", "compatibleWithNVMe"};
+            model.setColumnIdentifiers(columnNames);
             dao.readAll().forEach((u -> model.addRow(new Object[]{
                 u.getName(),
                 u.getSocket(),
@@ -324,8 +364,24 @@ public class General extends javax.swing.JPanel {
             })));
             TableComponentes.removeColumn(TableComponentes.getColumnModel().getColumn(7)); // Oculta compatibleWithSATA
             TableComponentes.removeColumn(TableComponentes.getColumnModel().getColumn(7)); // Oculta compatibleWithNVMe
+            comBoxBuscarPor.removeAllItems();
+            for (String columnName : columnNames) {
+                comBoxBuscarPor.addItem(columnName);
+            }
         } catch (Exception e) {
             System.err.print(e);
+        }
+    }
+    
+    private void setupTableAndSearch() {
+        // Configurar el TableRowSorter
+        tableModel = (DefaultTableModel) TableComponentes.getModel();
+        rowSorter = new TableRowSorter<>(tableModel);
+        TableComponentes.setRowSorter(rowSorter);
+
+        // Agregar nombres de columnas al comBoxBuscarPor
+        for (int i = 0; i < tableModel.getColumnCount(); i++) {
+            comBoxBuscarPor.addItem(tableModel.getColumnName(i));
         }
     }
 
