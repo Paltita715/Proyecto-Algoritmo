@@ -45,6 +45,10 @@ public class General extends javax.swing.JPanel {
         jSeparator2 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableRecomendaciones = new javax.swing.JTable();
+        comBoxBuscarPor = new javax.swing.JComboBox<>();
+        txtBuscar = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -61,7 +65,7 @@ public class General extends javax.swing.JPanel {
                 btnRamsActionPerformed(evt);
             }
         });
-        add(btnRams, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 100, 100));
+        add(btnRams, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 100, 100));
 
         btnDiscos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/Procesador.png"))); // NOI18N
         btnDiscos.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +73,7 @@ public class General extends javax.swing.JPanel {
                 btnDiscosActionPerformed(evt);
             }
         });
-        add(btnDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 100, 100));
+        add(btnDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 100, 100));
 
         btnTarjetasGraficas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-tarjeta-de-video-100.png"))); // NOI18N
         btnTarjetasGraficas.addActionListener(new java.awt.event.ActionListener() {
@@ -77,7 +81,7 @@ public class General extends javax.swing.JPanel {
                 btnTarjetasGraficasActionPerformed(evt);
             }
         });
-        add(btnTarjetasGraficas, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, 100, 100));
+        add(btnTarjetasGraficas, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 100, 100));
 
         btnPlacasMadre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-placa-base-100.png"))); // NOI18N
         btnPlacasMadre.addActionListener(new java.awt.event.ActionListener() {
@@ -85,7 +89,7 @@ public class General extends javax.swing.JPanel {
                 btnPlacasMadreActionPerformed(evt);
             }
         });
-        add(btnPlacasMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 100, 100));
+        add(btnPlacasMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 100, 100));
 
         TableComponentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,7 +110,7 @@ public class General extends javax.swing.JPanel {
         jScrollPane1.setViewportView(TableComponentes);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 720, 400));
-        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 720, 10));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 720, 10));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 20, 30, 620));
@@ -124,7 +128,22 @@ public class General extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(TableRecomendaciones);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 110, 560, 380));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, 560, 350));
+
+        add(comBoxBuscarPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 150, 50));
+
+        txtBuscar.setText("Que desea buscar ?...");
+        add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 200, 500, 50));
+
+        jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/search.png"))); // NOI18N
+        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 50));
+
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 70, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRamsActionPerformed
@@ -317,11 +336,15 @@ public class General extends javax.swing.JPanel {
     private javax.swing.JButton btnPlacasMadre;
     private javax.swing.JButton btnRams;
     private javax.swing.JButton btnTarjetasGraficas;
+    private javax.swing.JComboBox<String> comBoxBuscarPor;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
