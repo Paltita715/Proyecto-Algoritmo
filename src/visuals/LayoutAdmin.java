@@ -6,6 +6,12 @@ import slots.AdministarProductos;
 import slots.Inventario;
 import slots.Proveedores;
 import slots.Usuarios;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.Timer;
 
 public class LayoutAdmin extends javax.swing.JFrame {
     
@@ -17,6 +23,17 @@ public class LayoutAdmin extends javax.swing.JFrame {
         instance = this;
         Inventario inventario = new Inventario();
         switchPanel(inventario);
+        actualizarFecha();
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Actualizar la hora
+                actualizarHora();
+            }
+        });
+
+        // Iniciar el Timer
+        timer.start();
     }
     
     public static LayoutAdmin getInstance() {
@@ -40,6 +57,9 @@ public class LayoutAdmin extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JButton();
         btnProveedores = new javax.swing.JButton();
         pnlNavSup = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        lblHora = new javax.swing.JLabel();
         pnlBody = new javax.swing.JPanel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -143,15 +163,47 @@ public class LayoutAdmin extends javax.swing.JFrame {
 
         pnlNavSup.setBackground(new java.awt.Color(51, 51, 51));
 
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("VENTA DE COMPONENTES ELECTRÓNICOS");
+
+        lblFecha.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFecha.setText("           ");
+
+        lblHora.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblHora.setForeground(new java.awt.Color(255, 255, 255));
+        lblHora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora.setText("           ");
+
         javax.swing.GroupLayout pnlNavSupLayout = new javax.swing.GroupLayout(pnlNavSup);
         pnlNavSup.setLayout(pnlNavSupLayout);
         pnlNavSupLayout.setHorizontalGroup(
             pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1066, Short.MAX_VALUE)
+            .addGroup(pnlNavSupLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 419, Short.MAX_VALUE)
+                .addGroup(pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblFecha)
+                    .addComponent(lblHora))
+                .addGap(73, 73, 73))
         );
         pnlNavSupLayout.setVerticalGroup(
             pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(pnlNavSupLayout.createSequentialGroup()
+                .addGroup(pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlNavSupLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel1))
+                    .addGroup(pnlNavSupLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lblFecha)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblHora)))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         bg.add(pnlNavSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 1066, -1));
@@ -219,7 +271,20 @@ public class LayoutAdmin extends javax.swing.JFrame {
         pnlBody.revalidate();
         pnlBody.repaint();
     }
-    
+    private void actualizarFecha() {
+        LocalDate fechaActual = LocalDate.now();
+        DateTimeFormatter formatterFecha = DateTimeFormatter.ofPattern("dd/MM/yy");
+        String fechaFormateada = fechaActual.format(formatterFecha);
+        lblFecha.setText(fechaFormateada);
+    }
+
+    // Método para actualizar la hora actual en lblHora
+    private void actualizarHora() {
+        LocalTime horaActual = LocalTime.now();
+        DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String horaFormateada = horaActual.format(formatterHora);
+        lblHora.setText(horaFormateada);
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btnAdministrar;
@@ -228,8 +293,11 @@ public class LayoutAdmin extends javax.swing.JFrame {
     private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnUsuarios;
     private javax.swing.JLabel iconUser;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblHora;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lblUserType;
     private javax.swing.JPanel pnlBody;
