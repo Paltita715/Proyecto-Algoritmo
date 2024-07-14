@@ -8,7 +8,7 @@ public class RamModel {
     private int capacity;
     private int speed;
     private String latency;
-    private int voltage;
+    private double voltage;
     private int quantity;
 
     public String getRamId() {
@@ -67,11 +67,11 @@ public class RamModel {
         this.latency = latency;
     }
 
-    public int getVoltage() {
+    public double getVoltage() {
         return voltage;
     }
 
-    public void setVoltage(int voltage) {
+    public void setVoltage(double voltage) {
         this.voltage = voltage;
     }
 

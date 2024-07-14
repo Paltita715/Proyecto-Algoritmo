@@ -30,7 +30,7 @@ public class RamDAOImpl extends DBConnection implements RamDAO{
                 ram.setCapacity(rs.getInt("capacity"));
                 ram.setSpeed(rs.getInt("speed"));
                 ram.setLatency(rs.getString("latency"));
-                ram.setVoltage(rs.getInt("voltage"));
+                ram.setVoltage(rs.getDouble("voltage"));
                 ram.setQuantity(rs.getInt("quantity"));
                 listRams.add(ram);
            }

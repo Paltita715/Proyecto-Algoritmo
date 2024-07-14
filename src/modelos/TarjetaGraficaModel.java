@@ -4,11 +4,19 @@ public class TarjetaGraficaModel {
     private String graphicsCardId ;
     private int supplierId;
     private String name;
-    private String Interface;
+    private int PCIe;
     private int memory;
     private String typeMemory;
     private int bandwidth;
     private int quantity;
+
+    public int getPCIe() {
+        return PCIe;
+    }
+
+    public void setPCIe(int PCIe) {
+        this.PCIe = PCIe;
+    }
 
     public String getGraphicsCardId() {
         return graphicsCardId;
@@ -32,14 +40,6 @@ public class TarjetaGraficaModel {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getInterface() {
-        return Interface;
-    }
-
-    public void setInterface(String Interface) {
-        this.Interface = Interface;
     }
 
     public int getMemory() {

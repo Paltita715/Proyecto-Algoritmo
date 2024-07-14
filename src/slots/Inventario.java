@@ -161,7 +161,7 @@ public class Inventario extends javax.swing.JPanel {
                 u.getGraphicsCardId(),
                 u.getSupplierId(),
                 u.getName(),
-                u.getInterface(),
+                u.getPCIe(),
                 u.getMemory(),
                 u.getTypeMemory(),
                 u.getBandwidth(),

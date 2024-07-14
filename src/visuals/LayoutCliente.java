@@ -1,10 +1,16 @@
 package visuals;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+import slots.General;
+
 public class LayoutCliente extends javax.swing.JFrame {
 
     public LayoutCliente() {
         initComponents();
-        this.setLocationRelativeTo(bg);
+        this.setLocationRelativeTo(null);
+        General general = new General();
+        switchPanel(general);
     }
 
     @SuppressWarnings("unchecked")
@@ -13,13 +19,11 @@ public class LayoutCliente extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         bg = new javax.swing.JPanel();
-        pnlNavLat = new javax.swing.JPanel();
-        lblUserType = new javax.swing.JLabel();
+        pnlNavSup = new javax.swing.JPanel();
         lblUserName = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
+        lblUserType = new javax.swing.JLabel();
         iconUser = new javax.swing.JLabel();
         btnCerrarSesion = new javax.swing.JButton();
-        pnlNavSup = new javax.swing.JPanel();
         pnlBody = new javax.swing.JPanel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -39,19 +43,18 @@ public class LayoutCliente extends javax.swing.JFrame {
 
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlNavLat.setBackground(new java.awt.Color(51, 0, 0));
-        pnlNavLat.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pnlNavSup.setBackground(new java.awt.Color(51, 51, 51));
+        pnlNavSup.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblUserName.setText("User01");
+        pnlNavSup.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 170, 25));
 
         lblUserType.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lblUserType.setText("Cliente");
-        pnlNavLat.add(lblUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 25));
-
-        lblUserName.setText("User01");
-        pnlNavLat.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 170, 25));
-        pnlNavLat.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 280, 45));
+        pnlNavSup.add(lblUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 25));
 
         iconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/iconUser.png"))); // NOI18N
-        pnlNavLat.add(iconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 80));
+        pnlNavSup.add(iconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 80));
 
         btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
         btnCerrarSesion.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -63,24 +66,9 @@ public class LayoutCliente extends javax.swing.JFrame {
                 btnCerrarSesionMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 660, 160, 50));
+        pnlNavSup.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 160, 50));
 
-        bg.add(pnlNavLat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 768));
-
-        pnlNavSup.setBackground(new java.awt.Color(51, 51, 51));
-
-        javax.swing.GroupLayout pnlNavSupLayout = new javax.swing.GroupLayout(pnlNavSup);
-        pnlNavSup.setLayout(pnlNavSupLayout);
-        pnlNavSupLayout.setHorizontalGroup(
-            pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1066, Short.MAX_VALUE)
-        );
-        pnlNavSupLayout.setVerticalGroup(
-            pnlNavSupLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        bg.add(pnlNavSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 1066, -1));
+        bg.add(pnlNavSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 100));
 
         pnlBody.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -88,14 +76,14 @@ public class LayoutCliente extends javax.swing.JFrame {
         pnlBody.setLayout(pnlBodyLayout);
         pnlBodyLayout.setHorizontalGroup(
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1066, Short.MAX_VALUE)
+            .addGap(0, 1370, Short.MAX_VALUE)
         );
         pnlBodyLayout.setVerticalGroup(
             pnlBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 668, Short.MAX_VALUE)
         );
 
-        bg.add(pnlBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 1066, 668));
+        bg.add(pnlBody, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1370, 668));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,16 +105,23 @@ public class LayoutCliente extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_btnCerrarSesionMouseClicked
 
+    public final void switchPanel(JPanel panel) {
+        panel.setSize(1370, 668);
+        panel.setLocation(0, 0);
+        pnlBody.removeAll();
+        pnlBody.add(panel, BorderLayout.CENTER);
+        pnlBody.revalidate();
+        pnlBody.repaint();
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JLabel iconUser;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lblUserType;
     private javax.swing.JPanel pnlBody;
-    private javax.swing.JPanel pnlNavLat;
     private javax.swing.JPanel pnlNavSup;
     // End of variables declaration//GEN-END:variables
 }

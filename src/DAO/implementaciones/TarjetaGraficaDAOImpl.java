@@ -26,7 +26,7 @@ public class TarjetaGraficaDAOImpl extends DBConnection implements TarjetaGrafic
                 tarjetaGrafica.setGraphicsCardId(rs.getString("graphicsCardId"));
                 tarjetaGrafica.setSupplierId(rs.getInt("supplierId"));
                 tarjetaGrafica.setName(rs.getString("name"));
-                tarjetaGrafica.setInterface(rs.getString("Interface"));
+                tarjetaGrafica.setPCIe(rs.getInt("PCIe"));
                 tarjetaGrafica.setMemory(rs.getInt("memory"));
                 tarjetaGrafica.setTypeMemory(rs.getString("typeMemory"));
                 tarjetaGrafica.setBandwidth(rs.getInt("bandwidth"));

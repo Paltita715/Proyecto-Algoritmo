@@ -15,7 +15,6 @@ public class DBConnection {
         try {
             conexion = DriverManager.getConnection(DB_URL, USER, PASS);
             Class.forName(JDBC_DRIVER);
-            System.out.println("Se conecto a la base de datos");
         } catch (ClassNotFoundException | SQLException e) {
             throw e;
         }
@@ -25,7 +24,6 @@ public class DBConnection {
         if (conexion != null) {
             if (!conexion.isClosed()){
                 conexion.close();
-                System.out.println("Se desconecto de la base de datos");
             }
         }
     }

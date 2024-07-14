@@ -32,6 +32,8 @@ public class PlacaMadreDAOImpl extends DBConnection implements PlacaMadreDAO{
                 placaMadre.setPCIe(rs.getInt("PCIe"));
                 placaMadre.setStoragePorts(rs.getInt("storagePorts"));
                 placaMadre.setQuantity(rs.getInt("quantity"));
+                placaMadre.setCompatibleWithSATA(rs.getBoolean("compatibleWithSATA"));
+                placaMadre.setCompatibleWithNVMe(rs.getBoolean("compatibleWithNVME"));
                 listMotherBoards.add(placaMadre);
            }
             rs.close();

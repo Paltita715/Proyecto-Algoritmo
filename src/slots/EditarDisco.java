@@ -33,8 +33,6 @@ public class EditarDisco extends javax.swing.JPanel {
         btnCancelar = new javax.swing.JButton();
         txtId = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        txtTipo = new javax.swing.JTextField();
-        txtInterfaz = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtProveedor = new javax.swing.JComboBox<>();
@@ -49,6 +47,8 @@ public class EditarDisco extends javax.swing.JPanel {
         txtCantidad = new javax.swing.JSpinner();
         txtLectura = new javax.swing.JSpinner();
         txtEscritura = new javax.swing.JSpinner();
+        txtTipo = new javax.swing.JComboBox<>();
+        txtInterfaz = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,8 +79,6 @@ public class EditarDisco extends javax.swing.JPanel {
         txtId.setEditable(false);
         add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 50));
         add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 210, 50));
-        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 210, 50));
-        add(txtInterfaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 210, 50));
 
         jLabel2.setText("ID");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 30, -1));
@@ -114,6 +112,13 @@ public class EditarDisco extends javax.swing.JPanel {
         add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 340, 210, 50));
         add(txtLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 190, 210, 50));
         add(txtEscritura, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 210, 50));
+
+        txtTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SSD", "HDD" }));
+        txtTipo.setToolTipText("");
+        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 300, 210, 50));
+
+        txtInterfaz.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SATA", "NVME" }));
+        add(txtInterfaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 210, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -127,9 +132,9 @@ public class EditarDisco extends javax.swing.JPanel {
         int supplierId = proveedorMap.getOrDefault(nombreProveedor, -1); //aqui quiero recuperar la ID del proveedor
         System.out.println(supplierId);
         String name = txtNombre.getText();
-        String type = txtTipo.getText();
+        String type = (String) txtTipo.getSelectedItem();
         int capacity = (int) txtCapacidad.getValue();
-        String Interface = txtInterfaz.getText();
+        String Interface = (String) txtInterfaz.getSelectedItem();
         int readSpeed = (int) txtLectura.getValue();
         int writeSpeed = (int) txtEscritura.getValue();
         int quantity = (int) txtCantidad.getValue();
@@ -176,15 +181,15 @@ public class EditarDisco extends javax.swing.JPanel {
     private void cargarDatos(){
         txtId.setText(editDisco.getDiskId());
         for (String nombreProveedor : proveedorMap.keySet()) {
-        if (proveedorMap.get(nombreProveedor).equals(editDisco.getSupplierId())) {
-            txtProveedor.setSelectedItem(nombreProveedor);
-            break;
+            if (proveedorMap.get(nombreProveedor).equals(editDisco.getSupplierId())) {
+                txtProveedor.setSelectedItem(nombreProveedor);
+                break;
+            }
         }
-    }
         txtNombre.setText(editDisco.getName());
-        txtTipo.setText(editDisco.getType());
+        txtTipo.setSelectedItem(editDisco.getType());
         txtCapacidad.setValue(editDisco.getCapacity());
-        txtInterfaz.setText(editDisco.getInterface());
+        txtInterfaz.setSelectedItem(editDisco.getInterface());
         txtLectura.setValue(editDisco.getReadSpeed());
         txtEscritura.setValue(editDisco.getWriteSpeed());
         txtCantidad.setValue(editDisco.getQuantity());
@@ -208,10 +213,10 @@ public class EditarDisco extends javax.swing.JPanel {
     private javax.swing.JSpinner txtCapacidad;
     private javax.swing.JSpinner txtEscritura;
     private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtInterfaz;
+    private javax.swing.JComboBox<String> txtInterfaz;
     private javax.swing.JSpinner txtLectura;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JComboBox<String> txtProveedor;
-    private javax.swing.JTextField txtTipo;
+    private javax.swing.JComboBox<String> txtTipo;
     // End of variables declaration//GEN-END:variables
 }

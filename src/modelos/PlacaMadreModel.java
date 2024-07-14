@@ -10,6 +10,24 @@ public class PlacaMadreModel {
     private int PCIe;
     private int storagePorts;
     private int quantity;
+    private boolean compatibleWithSATA;
+    private boolean compatibleWithNVMe;
+
+    public boolean isCompatibleWithSATA() {
+        return compatibleWithSATA;
+    }
+
+    public void setCompatibleWithSATA(boolean compatibleWithSATA) {
+        this.compatibleWithSATA = compatibleWithSATA;
+    }
+
+    public boolean isCompatibleWithNVMe() {
+        return compatibleWithNVMe;
+    }
+
+    public void setCompatibleWithNVMe(boolean compatibleWithNVMe) {
+        this.compatibleWithNVMe = compatibleWithNVMe;
+    }
 
     public String getMotherboardId() {
         return motherboardId;
