@@ -37,9 +37,19 @@ public class AdministarProductos extends javax.swing.JPanel {
         add(RAMs, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 100, 100));
 
         PlacasMadre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-placa-base-100.png"))); // NOI18N
+        PlacasMadre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PlacasMadreActionPerformed(evt);
+            }
+        });
         add(PlacasMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 100, 100));
 
         TarjetasGraficas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-tarjeta-de-video-100.png"))); // NOI18N
+        TarjetasGraficas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TarjetasGraficasActionPerformed(evt);
+            }
+        });
         add(TarjetasGraficas, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, 100, 100));
     }// </editor-fold>//GEN-END:initComponents
 
@@ -52,6 +62,16 @@ public class AdministarProductos extends javax.swing.JPanel {
         RAMs rams = new RAMs();
         LayoutAdmin.getInstance().switchPanel(rams);
     }//GEN-LAST:event_RAMsActionPerformed
+
+    private void PlacasMadreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PlacasMadreActionPerformed
+        PlacasMadre placas = new PlacasMadre();
+        LayoutAdmin.getInstance().switchPanel(placas);
+    }//GEN-LAST:event_PlacasMadreActionPerformed
+
+    private void TarjetasGraficasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TarjetasGraficasActionPerformed
+        TarjetasGraficas tarjetas = new TarjetasGraficas();
+        LayoutAdmin.getInstance().switchPanel(tarjetas);
+    }//GEN-LAST:event_TarjetasGraficasActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Discos;
