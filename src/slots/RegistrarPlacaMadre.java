@@ -66,7 +66,7 @@ public class RegistrarPlacaMadre extends javax.swing.JPanel {
                 btnRegistrarActionPerformed(evt);
             }
         });
-        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 180, -1, -1));
+        add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 130, 50));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,62 +74,83 @@ public class RegistrarPlacaMadre extends javax.swing.JPanel {
                 btnCancelarActionPerformed(evt);
             }
         });
-        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 230, -1, -1));
-        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 50));
-        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 210, 50));
+        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, 130, 50));
+        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 210, 50));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 210, 50));
 
+        jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 30, -1));
-        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 210, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 20, -1));
+        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 210, 50));
 
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Proveedor");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Nombre");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("Socket");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Tipo de RAM");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("RAM max");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Cantidad");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
 
+        jLabel10.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Puertos");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, -1, -1));
-        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 210, 50));
-        add(txtPuertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 210, 50));
-        add(txtRamMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 210, 50));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, -1));
+        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 280, 210, 50));
+        add(txtPuertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 200, 210, 50));
+        add(txtRamMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, 210, 50));
 
+        jLabel11.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("PCIe");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, -1, -1));
-        add(txtSocket, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 50));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, -1, -1));
+        add(txtSocket, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 210, 50));
 
         txtTipoRam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR4", "DDR5" }));
         txtTipoRam.setToolTipText("");
-        add(txtTipoRam, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 210, 50));
+        add(txtTipoRam, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 440, 210, 50));
 
         txtPCIe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "8", "16" }));
         txtPCIe.setToolTipText("");
-        add(txtPCIe, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 210, 50));
+        add(txtPCIe, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 210, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("COMPATIBILIDAD");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 300, -1));
 
         txtSATA.setText("SATA");
-        jPanel1.add(txtSATA, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, -1, -1));
+        jPanel1.add(txtSATA, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         txtNVMe.setText("NVMe");
-        jPanel1.add(txtNVMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+        jPanel1.add(txtNVMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 280, 150));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 300, 130));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed

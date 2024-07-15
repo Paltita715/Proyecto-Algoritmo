@@ -33,19 +33,10 @@ public class EditarPlacaMadre extends javax.swing.JPanel {
         btnCancelar = new javax.swing.JButton();
         txtId = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         txtProveedor = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         txtCantidad = new javax.swing.JSpinner();
         txtPuertos = new javax.swing.JSpinner();
         txtRamMax = new javax.swing.JSpinner();
-        jLabel11 = new javax.swing.JLabel();
         txtSocket = new javax.swing.JTextField();
         txtTipoRam = new javax.swing.JComboBox<>();
         txtPCIe = new javax.swing.JComboBox<>();
@@ -53,6 +44,15 @@ public class EditarPlacaMadre extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         txtSATA = new javax.swing.JCheckBox();
         txtNVMe = new javax.swing.JCheckBox();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,7 +70,7 @@ public class EditarPlacaMadre extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 220, -1, -1));
+        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 110, 50));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -78,54 +78,29 @@ public class EditarPlacaMadre extends javax.swing.JPanel {
                 btnCancelarActionPerformed(evt);
             }
         });
-        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 290, -1, -1));
+        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 520, 120, 50));
 
         txtId.setEditable(false);
-        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 50));
-        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 210, 50));
-
-        jLabel2.setText("ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 30, -1));
-        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 210, 50));
-
-        jLabel4.setText("Proveedor");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
-
-        jLabel5.setText("Nombre");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
-
-        jLabel6.setText("Socket");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
-
-        jLabel7.setText("Tipo de RAM");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, -1, -1));
-
-        jLabel8.setText("RAM max");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, -1));
-
-        jLabel9.setText("Cantidad");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
-
-        jLabel10.setText("Puertos");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, -1, -1));
-        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 210, 50));
-        add(txtPuertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 210, 50));
-        add(txtRamMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, 210, 50));
-
-        jLabel11.setText("PCIe");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, -1, -1));
-        add(txtSocket, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 50));
+        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 210, 50));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 210, 50));
+        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 210, 50));
+        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 280, 210, 50));
+        add(txtPuertos, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 210, 50));
+        add(txtRamMax, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 520, 210, 50));
+        add(txtSocket, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 210, 50));
 
         txtTipoRam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DDR4", "DDR5" }));
         txtTipoRam.setToolTipText("");
-        add(txtTipoRam, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 210, 50));
+        add(txtTipoRam, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, 210, 50));
 
         txtPCIe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "8", "16" }));
         txtPCIe.setToolTipText("");
-        add(txtPCIe, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, 210, 50));
+        add(txtPCIe, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 120, 210, 50));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("COMPATIBILIDAD");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
 
@@ -135,7 +110,52 @@ public class EditarPlacaMadre extends javax.swing.JPanel {
         txtNVMe.setText("NVMe");
         jPanel1.add(txtNVMe, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 310, 280, 150));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 290, 130));
+
+        jLabel12.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel12.setText("ID");
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 20, -1));
+
+        jLabel13.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setText("Proveedor");
+        add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Nombre");
+        add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("Socket");
+        add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("Tipo de RAM");
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
+
+        jLabel17.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setText("RAM max");
+        add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 540, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel18.setText("Cantidad");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+
+        jLabel19.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel19.setText("Puertos");
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 220, -1, -1));
+
+        jLabel20.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel20.setText("PCIe");
+        add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
@@ -225,16 +245,16 @@ public class EditarPlacaMadre extends javax.swing.JPanel {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSpinner txtCantidad;

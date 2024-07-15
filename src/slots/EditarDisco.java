@@ -33,22 +33,22 @@ public class EditarDisco extends javax.swing.JPanel {
         btnCancelar = new javax.swing.JButton();
         txtId = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         txtProveedor = new javax.swing.JComboBox<>();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         txtCapacidad = new javax.swing.JSpinner();
         txtCantidad = new javax.swing.JSpinner();
         txtLectura = new javax.swing.JSpinner();
         txtEscritura = new javax.swing.JSpinner();
         txtTipo = new javax.swing.JComboBox<>();
         txtInterfaz = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,7 +66,7 @@ public class EditarDisco extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 430, -1, -1));
+        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, 90, 50));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,51 +74,69 @@ public class EditarDisco extends javax.swing.JPanel {
                 btnCancelarActionPerformed(evt);
             }
         });
-        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
+        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 500, -1, 50));
 
         txtId.setEditable(false);
-        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 50));
-        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 210, 50));
+        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 140, 210, 50));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 210, 50));
 
-        jLabel2.setText("ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 30, -1));
-
-        jLabel3.setText("Velocidad de lectura");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, -1));
-
-        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 210, 50));
-
-        jLabel4.setText("Proveedor");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
-
-        jLabel5.setText("Nombre");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
-
-        jLabel6.setText("Tipo");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
-
-        jLabel7.setText("Capacidad");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
-
-        jLabel8.setText("Interfaz");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, -1, -1));
-
-        jLabel9.setText("Cantidad");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
-
-        jLabel10.setText("Velocidad de escritura");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
-        add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 350, 210, 50));
-        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 210, 50));
-        add(txtLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 210, 50));
-        add(txtEscritura, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 210, 50));
+        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 210, 50));
+        add(txtCapacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 210, 50));
+        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 410, 210, 50));
+        add(txtLectura, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 230, 210, 50));
+        add(txtEscritura, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 320, 210, 50));
 
         txtTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SSD", "HDD" }));
         txtTipo.setToolTipText("");
-        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 50));
+        add(txtTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 210, 50));
 
         txtInterfaz.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SATA", "NVME" }));
-        add(txtInterfaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 210, 50));
+        add(txtInterfaz, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 140, 210, 50));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("ID");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 30, -1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Proveedor");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Nombre");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 340, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Tipo");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 430, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("Capacidad");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 520, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Velocidad de lectura");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Interfaz");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 160, -1, -1));
+
+        jLabel9.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Cantidad");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Velocidad de escritura");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

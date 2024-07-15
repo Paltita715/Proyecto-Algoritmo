@@ -52,7 +52,7 @@ public class RegistrarTarjetaGrafica extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRAR NUEVA TARJETA GRAFICA");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
-        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 470, 10));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 430, 10));
 
         btnEditar.setText("REGISTRAR");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +60,7 @@ public class RegistrarTarjetaGrafica extends javax.swing.JPanel {
                 btnEditarActionPerformed(evt);
             }
         });
-        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, -1, -1));
+        add(btnEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 520, 120, 50));
 
         btnCancelar.setText("CANCELAR");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -68,42 +68,58 @@ public class RegistrarTarjetaGrafica extends javax.swing.JPanel {
                 btnCancelarActionPerformed(evt);
             }
         });
-        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 430, -1, -1));
-        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 210, 50));
-        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 210, 50));
+        add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 120, 50));
+        add(txtId, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 210, 50));
+        add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 210, 50));
 
+        jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("ID");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 30, -1));
-        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 210, 50));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 30, -1));
+        add(txtProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 50));
 
+        jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("Proveedor");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
+        jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("Nombre");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, -1, -1));
 
+        jLabel6.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
         jLabel6.setText("PCIe");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 430, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
         jLabel7.setText("Memoria");
-        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 140, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Tipo de memoria");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 240, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
         jLabel9.setText("Cantidad");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
-        add(txtMemoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 210, 50));
-        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 210, 50));
-        add(txtAnchoBanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, 210, 50));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, -1, -1));
+        add(txtMemoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 210, 50));
+        add(txtCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 210, 50));
+        add(txtAnchoBanda, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 310, 210, 50));
 
         txtPCIe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4", "8", "16" }));
         txtPCIe.setToolTipText("");
-        add(txtPCIe, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 210, 50));
+        add(txtPCIe, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, 210, 50));
 
+        jLabel11.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
         jLabel11.setText("Ancho de banda");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, -1, -1));
-        add(txtTipoMemoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 170, 210, 50));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, -1, -1));
+        add(txtTipoMemoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 220, 210, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
