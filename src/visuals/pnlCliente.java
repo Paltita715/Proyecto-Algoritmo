@@ -12,6 +12,10 @@ public class pnlCliente extends javax.swing.JPanel {
     public pnlCliente() {
         initComponents();
     }
+    
+    public String getUsername() {
+        return txtUsuario.getText();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,7 +38,6 @@ public class pnlCliente extends javax.swing.JPanel {
         add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         txtUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        txtUsuario.setText("Ingrese un nombre de usuario");
         add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 290, 30));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -45,7 +45,7 @@ public class Inventario extends javax.swing.JPanel {
                 btnRamsActionPerformed(evt);
             }
         });
-        add(btnRams, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 75, 100, 100));
+        add(btnRams, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 80, 100, 100));
 
         btnDiscos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-disco-duro-100.png"))); // NOI18N
         btnDiscos.addActionListener(new java.awt.event.ActionListener() {
@@ -53,7 +53,7 @@ public class Inventario extends javax.swing.JPanel {
                 btnDiscosActionPerformed(evt);
             }
         });
-        add(btnDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 75, 100, 100));
+        add(btnDiscos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 100, 100));
 
         btnTarjetasGraficas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-tarjeta-de-video-100.png"))); // NOI18N
         btnTarjetasGraficas.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +61,7 @@ public class Inventario extends javax.swing.JPanel {
                 btnTarjetasGraficasActionPerformed(evt);
             }
         });
-        add(btnTarjetasGraficas, new org.netbeans.lib.awtextra.AbsoluteConstraints(615, 75, 100, 100));
+        add(btnTarjetasGraficas, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 100, 100));
 
         btnPlacasMadre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-placa-base-100.png"))); // NOI18N
         btnPlacasMadre.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,7 @@ public class Inventario extends javax.swing.JPanel {
                 btnPlacasMadreActionPerformed(evt);
             }
         });
-        add(btnPlacasMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(445, 75, 100, 100));
+        add(btnPlacasMadre, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 80, 100, 100));
 
         TableComponentes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -84,14 +84,14 @@ public class Inventario extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(TableComponentes);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 740, 240));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 830, 390));
         add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
-        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 740, 10));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 950, 10));
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
         jLabel1.setText("MEMORIA RAM");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 190, -1, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 360, 20));
 
         jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
@@ -102,17 +102,17 @@ public class Inventario extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("TARJETA GRÁFICA");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 180, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 190, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 51, 51));
         jLabel4.setText("DISCO");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
         jLabel5.setText("PLACA MADRE");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 180, -1, -1));
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 190, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDiscosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscosActionPerformed

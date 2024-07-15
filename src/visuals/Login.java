@@ -17,6 +17,7 @@ public class Login extends javax.swing.JFrame {
     Icon icono;
     int xMouse, yMouse;
     private pnlAdmin admin;
+    private pnlCliente cliente;
     boolean isAdmin;
 
     public Login() {
@@ -250,6 +251,7 @@ public class Login extends javax.swing.JFrame {
                 login = (LoginModel) dao.readBy(login);
                 if(login.getPassword().equals(password)){
                     LayoutAdmin layoutAdmin = new LayoutAdmin();
+                    layoutAdmin.setUserName(user);
                     layoutAdmin.setVisible(true);
                     this.setVisible(false);
                 } else{
@@ -262,14 +264,17 @@ public class Login extends javax.swing.JFrame {
                 admin.clearPassword();
             }
         }else{
+            String user = cliente.getUsername();
             LayoutCliente layoutCliente = new LayoutCliente();
+            layoutCliente.setUserName(user); // Cambia esta línea
             layoutCliente.setVisible(true);
+            this.setVisible(false);
         }
     }//GEN-LAST:event_btnIngresarMouseClicked
 
     private void btnClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnClienteMouseClicked
         isAdmin=false;
-        pnlCliente cliente = new pnlCliente();
+        cliente = new pnlCliente();
         cliente.setSize(400, 320);
         cliente.setLocation(0, 0);
         pnlContent.removeAll();

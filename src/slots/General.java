@@ -56,14 +56,15 @@ public class General extends javax.swing.JPanel {
         txtBuscar = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("COMPONENTES DISPONIBLES");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jLabel1.setText("RECOMENDACIONES DISPONIBLES");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 120, -1, -1));
         add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 360, 20));
 
         btnRams.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/icons8-ram-de-computadora-100.png"))); // NOI18N
@@ -135,7 +136,7 @@ public class General extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(TableRecomendaciones);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 290, 560, 350));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 160, 560, 410));
 
         add(comBoxBuscarPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 150, 50));
 
@@ -155,6 +156,11 @@ public class General extends javax.swing.JPanel {
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 70, 50));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 70, 50));
+
+        jLabel3.setFont(new java.awt.Font("Roboto Medium", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("COMPONENTES DISPONIBLES");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRamsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRamsActionPerformed
@@ -418,6 +424,7 @@ public class General extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> comBoxBuscarPor;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

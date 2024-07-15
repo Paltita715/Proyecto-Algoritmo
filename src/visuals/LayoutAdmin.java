@@ -132,7 +132,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnUsuariosMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 300, 80));
+        pnlNavLat.add(btnUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 300, 80));
 
         btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
         btnCerrarSesion.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -157,7 +157,7 @@ public class LayoutAdmin extends javax.swing.JFrame {
                 btnProveedoresMouseClicked(evt);
             }
         });
-        pnlNavLat.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 300, 80));
+        pnlNavLat.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 300, 80));
 
         bg.add(pnlNavLat, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 768));
 
@@ -237,6 +237,10 @@ public class LayoutAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setUserName(String userName) {
+        lblUserName.setText(userName);
+    }
+    
     private void btnCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseClicked
         this.setVisible(false);
         Login login = new Login();

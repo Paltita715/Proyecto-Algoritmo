@@ -1,7 +1,13 @@
 package visuals;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 import slots.General;
 
 public class LayoutCliente extends javax.swing.JFrame {
@@ -11,6 +17,17 @@ public class LayoutCliente extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         General general = new General();
         switchPanel(general);
+        actualizarFecha();
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Actualizar la hora
+                actualizarHora();
+            }
+        });
+
+        // Iniciar el Timer
+        timer.start();
     }
 
     @SuppressWarnings("unchecked")
@@ -24,6 +41,8 @@ public class LayoutCliente extends javax.swing.JFrame {
         lblUserType = new javax.swing.JLabel();
         iconUser = new javax.swing.JLabel();
         btnCerrarSesion = new javax.swing.JButton();
+        lblHora = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
         pnlBody = new javax.swing.JPanel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -48,15 +67,15 @@ public class LayoutCliente extends javax.swing.JFrame {
 
         lblUserName.setForeground(new java.awt.Color(255, 255, 255));
         lblUserName.setText("User01");
-        pnlNavSup.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 170, 25));
+        pnlNavSup.add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 50, 170, 25));
 
         lblUserType.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
         lblUserType.setForeground(new java.awt.Color(255, 255, 255));
         lblUserType.setText("Cliente");
-        pnlNavSup.add(lblUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, 25));
+        pnlNavSup.add(lblUserType, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, 25));
 
         iconUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/multimedia/iconUser.png"))); // NOI18N
-        pnlNavSup.add(iconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 80));
+        pnlNavSup.add(iconUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 80, 80));
 
         btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
         btnCerrarSesion.setFont(new java.awt.Font("Roboto Medium", 0, 12)); // NOI18N
@@ -68,7 +87,19 @@ public class LayoutCliente extends javax.swing.JFrame {
                 btnCerrarSesionMouseClicked(evt);
             }
         });
-        pnlNavSup.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 160, 50));
+        pnlNavSup.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 20, 160, 50));
+
+        lblHora.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblHora.setForeground(new java.awt.Color(255, 255, 255));
+        lblHora.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHora.setText("           ");
+        pnlNavSup.add(lblHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 20, -1, -1));
+
+        lblFecha.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFecha.setText("           ");
+        pnlNavSup.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 50, -1, -1));
 
         bg.add(pnlNavSup, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 100));
 
@@ -101,6 +132,10 @@ public class LayoutCliente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setUserName(String userName) {
+        lblUserName.setText(userName);
+    }
+    
     private void btnCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseClicked
         this.setVisible(false);
         Login login = new Login();
@@ -116,11 +151,28 @@ public class LayoutCliente extends javax.swing.JFrame {
         pnlBody.repaint();
     }
     
+    private void actualizarFecha() {
+        LocalDate fechaActual = LocalDate.now();
+        DateTimeFormatter formatterFecha = DateTimeFormatter.ofPattern("dd/MM/yy");
+        String fechaFormateada = fechaActual.format(formatterFecha);
+        lblFecha.setText(fechaFormateada);
+    }
+
+    // Método para actualizar la hora actual en lblHora
+    private void actualizarHora() {
+        LocalTime horaActual = LocalTime.now();
+        DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
+        String horaFormateada = horaActual.format(formatterHora);
+        lblHora.setText(horaFormateada);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JButton btnCerrarSesion;
     private javax.swing.JLabel iconUser;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblHora;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lblUserType;
     private javax.swing.JPanel pnlBody;
